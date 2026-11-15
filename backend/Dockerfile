@@ -1,5 +1,5 @@
 # --- Build stage: compile and package the Spring Boot jar ---
-FROM maven:3.9-eclipse-temurin-21 AS build
+FROM maven:3.9-eclipse-temurin-25 AS build
 WORKDIR /app
 COPY pom.xml .
 # Download dependencies in their own layer so code changes don't re-download them
@@ -8,7 +8,7 @@ COPY src src
 RUN mvn -B -q package -DskipTests
 
 # --- Run stage: just the JRE and the jar ---
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:25-jre
 WORKDIR /app
 RUN useradd --system --uid 1001 app
 COPY --from=build /app/target/minibank-*.jar app.jar

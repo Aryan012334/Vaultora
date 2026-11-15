@@ -15,7 +15,7 @@
 	<description>Mini Bank - a demo banking API built with Spring Boot, Spring Security (JWT) and PostgreSQL</description>
 
 	<properties>
-		<java.version>21</java.version>
+		<java.version>25</java.version>
 	</properties>
 
 	<dependencyManagement>
