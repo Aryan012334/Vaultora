@@ -8,7 +8,7 @@
 		<version>4.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>dev.jyothsna</groupId>
+	<groupId>dev.aryan</groupId>
 	<artifactId>minibank</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>minibank</name>

@@ -2,7 +2,7 @@
 
 A full-stack demo banking app: customers open accounts, move money between them and pay other customers, and an admin can freeze accounts. Every balance change goes through a proper ledger, and transfers are safe against double-clicks and concurrent requests.
 
-**Live demo:** https://jyothsna-mini-bank.vercel.app · click **Try the demo account** to sign in with sample data, no sign-up needed.
+**Demo account:** click **Try the demo account** to sign in with sample data; no sign-up is needed.
 
 > This is a portfolio project, not a real bank. No real money is involved.
 
@@ -35,7 +35,7 @@ These are the parts I'd walk through in an interview.
 
 ### 1. Transfers are atomic and can't overdraw
 
-[`TransferService.postTransfer`](backend/src/main/java/dev/jyothsna/minibank/transfer/TransferService.java) runs in a single database transaction:
+[`TransferService.postTransfer`](backend/src/main/java/dev/aryan/minibank/transfer/TransferService.java) runs in a single database transaction:
 
 1. Locks both account rows with `SELECT ... FOR UPDATE`.
 2. Checks ownership, account status and available balance *after* taking the locks, so the balance it checks can't change underneath it.
@@ -106,11 +106,11 @@ Built with Spring AI 2.0.1 (`@McpTool`) on the official MCP Java SDK 2.0, statel
 **Try it with the MCP Inspector:**
 
 ```bash
-TOKEN=$(curl -s -X POST https://minibank-api-7cno.onrender.com/api/auth/login \
+TOKEN=$(curl -s -X POST http://localhost:8080/api/auth/login \
   -H 'Content-Type: application/json' \
   -d '{"email":"demo@minibank.dev","password":"Demo@1234"}' | jq -r .token)
 
-npx @modelcontextprotocol/inspector --cli https://minibank-api-7cno.onrender.com/mcp \
+npx @modelcontextprotocol/inspector --cli http://localhost:8080/mcp \
   --transport http --header "Authorization: Bearer $TOKEN" --method tools/list
 ```
 
@@ -215,4 +215,4 @@ cd frontend && npm run lint && npm run build
 
 ---
 
-Built by **Jyothsna Peruri** · [LinkedIn](https://www.linkedin.com/in/jyothsna-jo-peruri/) · [Portfolio](https://jyothsnaperuri.github.io/Jyothsna-portfolio/)
+Built by **Aryan Yewale** · [GitHub](https://github.com/Aryan012334)

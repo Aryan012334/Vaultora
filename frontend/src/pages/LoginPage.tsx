@@ -9,7 +9,7 @@ import type { User } from '../types'
 
 type Mode = 'signin' | 'register'
 
-const GITHUB_URL = 'https://github.com/jyothsnaPeruri/mini-bank'
+const GITHUB_URL = 'https://github.com/Aryan012334/Vaultora'
 
 export function LoginPage() {
   const { user, login, register } = useAuth()
@@ -170,7 +170,7 @@ export function LoginPage() {
           </form>
         </div>
         <p className="auth-footer">
-          Built by Jyothsna Peruri ·{' '}
+          Built by Aryan Yewale ·{' '}
           <a href={GITHUB_URL} target="_blank" rel="noreferrer">
             View source on GitHub
           </a>
