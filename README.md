@@ -12,7 +12,7 @@ A full-stack demo banking app: customers open accounts, move money between them 
 
 | Layer | Technology |
 | --- | --- |
-| Backend | Java 21, Spring Boot 4, Spring Security (JWT resource server), Spring Data JPA / Hibernate, Bean Validation |
+| Backend | Java 25, Spring Boot 4, Spring Security (JWT resource server), Spring Data JPA / Hibernate, Bean Validation |
 | Database | PostgreSQL, schema managed with Flyway migrations |
 | Frontend | React 19, TypeScript, React Router, Vite |
 | Testing | JUnit 5 + MockMvc integration tests against a real PostgreSQL database |
@@ -165,7 +165,7 @@ render.yaml                  Render deployment blueprint
 
 ## Running locally
 
-**Prerequisites:** Java 21, Node 20+, and PostgreSQL running locally.
+**Prerequisites:** Java 25, Node 20+, and PostgreSQL running locally.
 
 ```bash
 # 1. Databases
